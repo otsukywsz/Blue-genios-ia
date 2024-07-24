@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Genios AI</title>
+  <style>
+    body {
+      background-color: #181818;
+      color: #f0f0f0;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      background-color: #282828;
+      width: 250px;
+      padding: 20px;
+    }
+
+    .sidebar h1 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      color: #f0f0f0;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .main {
+      flex-grow: 1;
+      padding: 20px;
+    }
+
+    .main h1 {
+      margin-bottom: 20px;
+    }
+
+    .main p {
+      margin-bottom: 10px;
+    }
+
+    .main .card {
+      background-color: #383838;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .main .card h2 {
+      margin-bottom: 10px;
+    }
+
+    .main .card p {
+      margin-bottom: 0;
+    }
+
+    .logo {
+      display: block;
+      margin: 20px auto;
+      width: 150px; /* Ajuste o tamanho da logo conforme necessário */
+    }
+
+    .active {
+      background-color: #383838;
+      color: #007bff;
+      border-left: 5px solid #007bff;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .form-container label {
+      font-weight: bold;
+    }
+
+    .form-container input[type="text"],
+    .form-container select {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: #282828;
+      color: #f0f0f0;
+    }
+
+    .form-container select {
+      width: fit-content;
+    }
+
+    .form-container button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <img src="logo.png" alt="Logo Blue Genios AI" class="logo">
+      <h1>Blue Genios AI</h1>
+      <ul>
+        <li><a href="#" id="identificando-avaliando" class="active">Avaliação de risco</a></li>
+        <li><a href="#" id="missao-visao">Missão e Visão</a></li>
+        <li><a href="#" id="nossa-equipe">Nossa Equipe</a></li>
+        <li><a href="#" id="perdao-arrependimento">Benefícios</a></li>
+        <li><a href="#" id="dias-anteriores">Redes sociais </a></li>
+      </ul>
+    </div>
+    <div class="main" id="main-content">
+      <h1>Bem-vindo ao Blue Genios AI</h1>
+      <p>Transformando dados em decisões, para um futuro social mais seguro e consciente.</p>
+      <div class="card">
+        <h2>Sugestões de uso</h2>
+        <p>Utilize nossa IA para avaliar riscos sociais, ajudando a orientar políticas públicas, otimizar estratégias de intervenção e promover um ambiente mais seguro e justo. A tecnologia que alia dados e consciência para um impacto positivo.</p>
+      </div>
+      <div class="card" id="avaliacao-risco-form">
+        <h2>Avaliação de Risco</h2>
+        <div class="form-container">
+          <label for="projeto">Descreva o seu projeto:</label>
+          <textarea id="projeto" rows="5"></textarea>
+
+          <label for="tipo">Selecione o tipo:</label>
+          <select id="tipo">
+            <option value="residencial">Residencial</option>
+            <option value="comercial">Comercial</option>
+            <option value="industrial">Industrial</option>
+            <option value="outros">Outros</option>
+          </select>
+
+          <label for="industria">Selecione a indústria:</label>
+          <select id="industria">
+            <option value="construcao">Construção</option>
+            <option value="tecnologia">Tecnologia</option>
+            <option value="saude">Saúde</option>
+            <option value="outros">Outros</option>
+          </select>
+
+          <label for="edificio">Selecione o tipo de edifício:</label>
+          <select id="edificio">
+            <option value="prédio">Prédio</option>
+            <option value="casa">Casa</option>
+            <option value="fábrica">Fábrica</option>
+            <option value="outros">Outros</option>
+          </select>
+
+          <button type="button">Avaliar Risco</button>
+        </div>
+      </div>
+      <div id="missao-visao-content" style="display: none;">
+        <h2>Missão e Visão</h2>
+        <p><strong>Nossa Missão:</strong> Utilizar a inteligência artificial para avaliar e analisar os riscos sociais, promovendo ambientes mais seguros e justos. Através de tecnologias avançadas e análise de dados, buscamos apoiar decisões informadas que contribuam para o bem-estar das comunidades e a eficácia das políticas públicas.</p>
+        <p><strong>Nossa Visão:</strong> Criar um futuro onde dados precisos promovam equidade, segurança e progresso sustentável em todas as comunidades ao redor do mundo.</p>
+      </div>
+      <div id="perdao-arrependimento-content" style="display: none;">
+        <h2>Benefícios</h2>
+        <p>・Redução de Riscos Sociais</p>
+        <p>Intervenções Focadas: Oferece dados e análises sobre áreas e populações vulneráveis que podem impactar os negócios, permitindo que as empresas desenvolvam estratégias específicas para mitigar riscos e evitar problemas antes que se agravem.</p>
+        <p>・Melhoria na Tomada de Decisões</p>
+        <p>Decisões Baseadas em Dados: Fornece informações detalhadas e precisas para apoiar a tomada de decisões empresariais informadas, ajudando na alocação eficiente de recursos e na definição de estratégias de negócios.</p>
+        <p>・Aumento da Segurança Comunitária</p>
+        <p>Proteção e Estabilidade: Analisa dados para identificar áreas de risco que podem afetar a operação e a reputação da empresa, permitindo o desenvolvimento de medidas que aumentam a segurança e a estabilidade das comunidades onde a empresa atua.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const links = document.querySelectorAll('.sidebar a');
+    const mainContent = document.getElementById('main-content');
+    const avaliacaoRiscoForm = document.getElementById('avaliacao-risco-form');
+    const missaoVisaoContent = document.getElementById('missao-visao-content');
+    const beneficiosContent = document.getElementById('perdao-arrependimento-content');
+
+    links.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault(); 
+
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        // Mostrar a aba correspondente
+        const contentId = link.id;
+        if (contentId === 'identificando-avaliando') {
+          // Exibe a aba de avaliação de risco
+          avaliacaoRiscoForm.style.display = 'block';
+          missaoVisaoContent.style.display = 'none';
+          beneficiosContent.style.display = 'none';
+        } else if (contentId === 'missao-visao') {
+          // Exibe a aba de missão e visão
+          missaoVisaoContent.style.display = 'block';
+          avaliacaoRiscoForm.style.display = 'none';
+          beneficiosContent.style.display = 'none';
+        } else if (contentId === 'perdao-arrependimento') {
+          // Exibe a aba de benefícios
+          beneficiosContent.style.display = 'block';
+          avaliacaoRiscoForm.style.display = 'none';
+          missaoVisaoContent.style.display = 'none';
+        } else {
+          // Esconde as abas de avaliação de risco, missão e visão, e benefícios
+          avaliacaoRiscoForm.style.display = 'none';
+          missaoVisaoContent.style.display = 'none';
+          beneficiosContent.style.display = 'none';
+        }
+
+        // Se você tiver outras abas, adicione mais condições aqui
+        // ...
+      });
+    });
+  </script>
+</body>
+</html>
